@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>WanderExplorers Travel Agency</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    /* Simple, beginner-friendly styling */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background:#FFF8DE;
+      color: #222;
+    }
+
+    header {
+      background: #452829;
+      color: white;
+      padding: 18px 12px;
+      text-align: center;
+    }
+
+    header h1 { margin: 0; font-size: 2.1rem; }
+    header p { margin: 6px 0 0; font-size: 0.95rem; opacity: 0.95; }
+
+    nav {
+      background: #452829;
+      padding: 8px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    main { padding: 16px; max-width: 1000px; margin: 0 auto; }
+
+    section { background: white; border-radius: 6px; padding: 14px; margin: 14px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+
+    h2 { color: #7B542F; margin-top: 0; }
+
+    /* Packages list */
+    .packages { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 10px; }
+    .package {
+      border: 1px solid #e6eef0;
+      border-radius: 6px;
+      padding: 10px;
+    }
+    .package img { width: 100%; border-radius: 4px; display: block; }
+    .price { font-weight: bold; margin-top: 8px; color: #03464b; }
+
+    /* Booking form */
+    .booking-form input, .booking-form select, .booking-form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 6px;
+      margin-bottom: 10px;
+      border: 1px solid #cfe6e9;
+      border-radius: 4px;
+    }
+    .btn {
+      background: #7B542F;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .btn:hover { opacity: 0.95; }
+
+    /* Tips */
+    .tips ul { padding-left: 18px; }
+
+    /* Gallery */
+    .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 12px;
+}
+.gallery-grid img {
+    width: 100%;   
+    height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+
+    footer {
+      text-align: center;
+      padding: 12px;
+      margin-top: 12px;
+      color: #555;
+      font-size: 0.9rem;
+    }
+    
+.package img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+
+    
+    @media (max-width:420px){
+      header h1 {font-size:1.2rem;}
+      .gallery-grid img { height: 90px; }
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>WanderExplorers Travel Agency</h1>
+  <p>Explore hand-picked tours • Easy booking • Local travel tips</p>
+</header>
+
+<nav>
+  <a href="#packages">Packages</a>
+  <a href="#book">Book</a>
+  <a href="#tips">Travel Tips</a>
+  <a href="#gallery">Gallery</a>
+</nav>
+
+<main>
+  <!-- Packages -->
+  <section id="packages">
+    <h2>Tour Packages</h2>
+    <p>Choose from our popular packages. Each includes accommodation and local guides.</p>
+
+    <div class="packages">
+      <div class="package">
+        <img src="package1.jpg" alt="Beach escape">
+        <h3>Sunny Beach Escape</h3>
+        <p>3 nights • Beach resort • Snorkeling trip</p>
+        <p class="price">From ₹12,999 per person</p>
+        <button class="btn" onclick="location.href='#book'">Book this</button>
+      </div>
+
+      <div class="package">
+        <img src="package2.jpg" alt="Mountain trek (replace with your image)">
+        <h3>Hills & Trails Trek</h3>
+        <p>4 days • Guided treks • Campfires</p>
+        <p class="price">From ₹9,499 per person</p>
+        <button class="btn" onclick="location.href='#book'">Book this</button>
+      </div>
+
+      <div class="package">
+        <img src="package3.jpg" alt="City cultural tour">
+        <h3>Cultural City Break</h3>
+        <p>2 nights • Guided city tours • Museums</p>
+        <p class="price">From ₹5,299 per person</p>
+        <button class="btn" onclick="location.href='#book'">Book this</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section id="book">
+    <h2>Booking</h2>
+    <p>Fill this simple form to request a booking. We'll contact you to confirm.</p>
+
+    <form class="booking-form" onsubmit="alert('Thanks! This is a demo form.'); return false;">
+      <label for="name">Full name</label>
+      <input id="name" type="text" placeholder="Your name" required>
+
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="you@example.com" required>
+
+      <label for="package">Choose package</label>
+      <select id="package">
+        <option>Sunny Beach Escape</option>
+        <option>Hills & Trails Trek</option>
+        <option>Cultural City Break</option>
+      </select>
+
+      <label for="people">Number of people</label>
+      <input id="people" type="number" min="1" value="1">
+
+      <label for="date">Approx travel date</label>
+      <input id="date" type="date">
+
+      <label for="notes">Any notes / questions</label>
+      <textarea id="notes" placeholder="Tell us anything special..."></textarea>
+
+      <button class="btn" type="submit">Request Booking</button>
+    </form>
+  </section>
+
+  <!-- Travel Tips -->
+  <section id="tips">
+    <h2>Travel Tips</h2>
+    <p>Quick tips to make your trip easier and safer.</p>
+    <div class="tips">
+      <ul>
+        <li>Carry a small first-aid kit and any regular medicines.</li>
+        <li>Make digital and physical copies of important documents.</li>
+        <li>Learn a few basic phrases of the local language — people appreciate it.</li>
+        <li>Keep local emergency numbers and your hotel contact handy.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>Gallery — Destinations</h2>
+    
+
+    <div class="gallery-grid">
+      <img src="dest1.jpg" alt="Destination 1">
+      <img src="dest2.jpg" alt="Destination 2 ">
+      <img src="dest3.jpg" alt="Destination 3 ">
+      <img src="dest4.jpg" alt="Destination 4 ">
+      <img src="dest5.jpg" alt="Destination 5 ">
+      <img src="dest6.jpg" alt="Destination 6 ">
+      <img src="dest7.jpg" alt="Destination 7 ">
+      <img src="dest8.jpg" alt="Destination 8 ">
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>WanderExplorers Travel • Email: wanderexplorers@gmail.com </p>
+  <p>&copy; 2025 WanderExplorers Travel Agency</p>
+</footer>
+
+</body>
+</html>
